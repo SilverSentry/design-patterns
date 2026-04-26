@@ -12,8 +12,9 @@ Flexibilidad: Cambiar la familia completa cambiando una variable de entorno.
 
 Escalabilidad: Para agregar una nueva familia (ej: MacFactory), solo se crean nuevos productos y una nueva fábrica, sin modificar Application.
 
-Estructura:
+## Estructura
 
+```
 AbstractFactory/
 ├── index.ts                    # Punto de entrada
 ├── package.json                # Dependencias
@@ -22,11 +23,11 @@ AbstractFactory/
     ├── app/
     │   └── Application.ts      # Cliente: usa fábricas abstractas
     ├── config/
-    │   └── index.ts             # Selector de fábrica por entorno
+    │   └── index.ts            # Selector de fábrica por entorno
     ├── factories/
     │   ├── GUIFactory.interface.ts   # Interfaz de fábrica abstracta
     │   ├── WebFactory.ts             # Fábrica concreta: Web
-    │   └── WindowsFactory.ts         # Fábrica concreta: Windows
+    │   └── WindowsFactory.ts        # Fábrica concreta: Windows
     └── products/
         ├── buttons/
         │   ├── button.interface.ts   # Producto abstracto: Button
@@ -34,8 +35,9 @@ AbstractFactory/
         │   └── WindowsButton.ts      # Producto concreto: Windows
         └── checkbox/
             ├── checkbox.interface.ts # Producto abstracto: Checkbox
-            ├── WebCheckbox.ts         # Producto concreto: Web
+            ├── WebCheckbox.ts        # Producto concreto: Web
             └── WindowsCheckbox.ts    # Producto concreto: Windows
+```
 
 products/: Contiene las interfaces y clases concretas de los productos. Cada producto se agrupa en su propia subcarpeta (button, checkbox) para mantener la separación. Esto facilita añadir nuevos tipos de productos sin afectar a otros.
 
